@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/* Breakpoint mixins */
+/* Media  Mixins */
+@font-face {
+  font-family: "fa-brands";
+  src: url('fa-brands-400.ttf');
+}
+@font-face {
+  src: url('fa-regular-400.ttf');
+  font-family: "fa-reg";
+}
+@font-face {
+  src: url('fa-solid-900.ttf');
+  font-family: "fa-solid";
+}
+@font-face {
+  src: url('Lato-Regular.ttf');
+  font-family: "lato";
+}
+@font-face {
+  src: url('Lato-Bold.ttf');
+  font-family: "lato-bold";
+}
+@font-face {
+  src: url('Lato-Thin.ttf');
+  font-family: "lato-thin";
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "lato";
+  letter-spacing: 0.3px;
+}
+body {
+  background-color: #fdfdfb;
+  color: #808080;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "lato-bold";
+  margin: 0;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+p {
+  margin: 0;
+  font-size: 1rem;
+}
+button,
+a {
+  cursor: pointer;
+}
+textarea,
+textarea::placeholder,
+input::placeholder {
+  font-family: lato, sans-serif;
+  font-size: 1rem;
+}
+textarea {
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.25);
+}
+input {
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: 1px solid #eeeeee;
+  outline: none;
+  box-shadow: 2px 2px 3px 0px #5e5e5e1f;
+  color: #808080;
+  width: 200px;
+}
+label {
+  font-size: 1rem;
+}
+.hide {
+  display: none;
+}
+.btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  transition: 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn:active {
+  filter: brightness(110%);
+}
+.btn.confirm {
+  color: #ffbd08;
+  border: 2px solid #ffbd08;
+  color: #fff;
+  background-color: #ffbd08;
+}
+.btn.warning {
+  color: #f5de5e;
+}
+.btn.neutral {
+  background-color: #808080;
+}
+.btn.add {
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  color: #fff;
+  background-color: #ffbd08;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.add::before {
+  font-family: "fa-solid";
+  content: "";
+}
+.btn.back {
+  color: #7ab9c9;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+}
+.btn.back::before {
+  font-family: "fa-solid";
+  content: "";
+}
+.site-block {
+  margin-bottom: 1.25rem;
+}
+.ratio-16-9 {
+  position: relative;
+  overflow: hidden;
+}
+.ratio-16-9::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56%;
+}
+.ratio-16-9 > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ratio-16-9 > img {
+  height: 100%;
+  object-fit: cover;
+}
+.ratio-square {
+  position: relative;
+  overflow: hidden;
+}
+.ratio-square::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.ratio-square > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ratio-square > img {
+  height: 100%;
+  object-fit: cover;
+}
+.ratio-card {
+  position: relative;
+  overflow: hidden;
+}
+.ratio-card::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 80%;
+}
+.ratio-card > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ratio-card > img {
+  height: 100%;
+  object-fit: cover;
+}
+.ratio-poster {
+  position: relative;
+  overflow: hidden;
+}
+.ratio-poster::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 150%;
+}
+.ratio-poster > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ratio-poster > img {
+  height: 100%;
+  object-fit: cover;
+}
+.clean-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* FLEX - BASE */
+.flex {
+  display: flex;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  flex-direction: column;
+}
+/* ALIGNMET/CONTENT */
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+/* FLEX-GROW */
+.flex-1 {
+  flex-grow: 1;
+}
+.flex-2 {
+  flex-grow: 2;
+}
+.flex-4 {
+  flex-grow: 4;
+}
+.flex-8 {
+  flex-grow: 8;
+}
+.main-layout {
+  margin: 40px 20px 0;
+}
+
+/*# sourceMappingURL=styles.css.map*/

@@ -29,6 +29,7 @@ async function query(filterBy = {}) {
 async function getById(contactId) {
     try {
         const collection = await dbService.getCollection('contacts')
+        const c = await collection.find().toArray()
         const contact = await collection.findOne({ '_id': ObjectId(contactId)})
         return contact
     } catch (err) {
@@ -61,13 +62,13 @@ async function update(contact) {
     try {
         // peek only updatable fields!
         const contactToSave = {
-            _id: contact._id,
+            // _id: contact._id,
             name: contact.name,
             email: contact.email,
             phone: contact.phone,
         }
         const collection = await dbService.getCollection('contacts')
-        await collection.updateOne({ '_id': ObjectId(contactToSave._id) }, { $set: contactToSave })
+        await collection.updateOne({ '_id': ObjectId(contact._id) }, { $set: contactToSave })
         return contactToSave;
     } catch (err) {
         logger.error(`cannot update contact ${contact._id}`, err)
@@ -110,6 +111,3 @@ function _buildCriteria(filterBy) {
     // }
     return criteria
 }
-
-
-
