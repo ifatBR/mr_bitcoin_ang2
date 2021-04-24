@@ -1371,7 +1371,6 @@ class ContactDetailsComponent {
     ngOnInit() {
         this.subscription = this.route.data.subscribe(data => {
             this.contact = data.contact;
-            // console.log('data', data);
         });
         this.subscriptionMoves = this.route.params.subscribe(params => this.setContactMoves(params.id));
     }
