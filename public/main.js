@@ -608,9 +608,11 @@ __webpack_require__.r(__webpack_exports__);
 
 // import {router} from '@/router'
 
-const BASE_URL =  false
-    ? undefined
-    : '//localhost:3030/api/'
+// const BASE_URL = process.env.NODE_ENV === 'production'
+//     ? '/api/'
+//     : '//localhost:3030/api/'
+const BASE_URL = '/api/'
+
 
 
 var axios = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
